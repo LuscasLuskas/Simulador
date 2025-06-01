@@ -7,8 +7,7 @@ Simulador TCC
    - numpy (como np): Para operações numéricas, especialmente se precisarmos de arrays ou funções matemáticas mais avançadas (aqui, np.inf é usado para representar infinito em um caso extremo).
    - pandas (como pd): Para manipulação e análise de dados, especialmente para criar e exibir o DataFrame com os resultados da simulação.
 
-2. Função Auxiliar
- A função auxiliar fará o calculo do valor subjetivo f(x) para um agente, se baseando na Teoria da Prospecção.
+2. Função Auxiliar: A função auxiliar fará o calculo do valor subjetivo f(x) para um agente, se baseando na Teoria da Prospecção.
  - Paramentros
     - x: A sensação objetiva de ganho (x > 0) ou perda (x < 0).
     - a: Controla a curvatura da função no domínio das perdas (sensibilidade à perda).
@@ -16,16 +15,14 @@ Simulador TCC
     - E: Representa a expectativa do agente, modificando a intensidade da reação a ganhos/perdas.
 A função retornará um valor entre -1 (perda máxima percebida) e 1 (ganho máximo percebido).
 
-3. Definição dos Perfis dos Agentes (agent_profiles)
-Essa parte definirá as caracteristicas dos diferentes tipos de agentes (Compradores e vendedores) e seus subtipos (Hedge, Moderado, Ponzi). Cada agente é representado por um dicionário dentro do diciónario agente_profiles.
+3. Definição dos Perfis dos Agentes (agent_profiles): Essa parte definirá as caracteristicas dos diferentes tipos de agentes (Compradores e vendedores) e seus subtipos (Hedge, Moderado, Ponzi). Cada agente é representado por um dicionário dentro do diciónario agente_profiles.
  - type: "comprador" ou "vendedor".
  - a, b, E: Parâmetros para a função f_x_function, definindo sua psicologia.
  - lambda_tj: Sensibilidade da demanda/oferta do agente à taxa de juros.
  - fator_impacto_fx: Modula o quão fortemente o sentimento f(x) afeta a quantidade base que o agente deseja transacionar.
  - base_schedule: Um dicionário que representa a curva de demanda/oferta base do agente, mapeando preços a quantidades (ex:{preço1: quantidade1, preço2: quantidade2}).
 
-4. Função Principal da Simulação (run_simulation_advanced_com_seguranca)
-Essa é a função principal que executará a simulção ciclo a ciclo. Ela vai integrar todos os componentes: agentes, função de sentimento, cálculo de transações, a determinação da taxa de juros e dispositivo de segurança.
+4. Função Principal da Simulação (run_simulation_advanced_com_seguranca): Essa é a função principal que executará a simulção ciclo a ciclo. Ela vai integrar todos os componentes: agentes, função de sentimento, cálculo de transações, a determinação da taxa de juros e dispositivo de segurança.
  - Inicialização: Configura variáveis iniciais como tj_atual, p_benchmark_atual, consecutive_bad_cycles e o dicionário history para armazenar os dados de cada ciclo.
   - Loop de Ciclos:
     - Cálculo de Demanda/Oferta Agregada: Para cada agente, calcula sua quantidade final desejada de compra/venda. Isso envolve:
@@ -47,11 +44,9 @@ Essa é a função principal que executará a simulção ciclo a ciclo. Ela vai 
   - Atualização: A tj_atual para o próximo ciclo é definida.
 Retorna um DataFrame do Pandas contendo o histórico completo da simulação.
 
-5. Parâmetros de Simulação e Chamada de Função
-Nesta parte será definida todos os parâmetros iniciais para a simulação e para o dispositivo de segurança. Bem como, chama-se a função run_simulation_advanced_com_seguranca com esses parâmetros para executar a simulação. O resultado é armazenado na variável simulation_results_df
+5. Parâmetros de Simulação e Chamada de Função: Nesta parte será definida todos os parâmetros iniciais para a simulação e para o dispositivo de segurança. Bem como, chama-se a função run_simulation_advanced_com_seguranca com esses parâmetros para executar a simulação. O resultado é armazenado na variável simulation_results_df
 
-6. Geração de Gráficos e Impressão de Resultados
-Depois da simulação, o codigo vai gerar os gráficos que visualizam os resultados:
+6. Geração de Gráficos e Impressão de Resultados: Depois da simulação, o codigo vai gerar os gráficos que visualizam os resultados:
  - TJ ao longo dos ciclos, com marcações verticais nos ciclos onde o dispositivo de segurança decidiu intervir.
  - MA ao longos dos ciclos, com uma linha horizontal indicando o MA_limiar_baixo.
  - Comportamento (quantidade transacionada) dos três tipos de compradores.
