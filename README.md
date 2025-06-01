@@ -8,7 +8,7 @@ Simulador TCC
    - pandas (como pd): Para manipulação e análise de dados, especialmente para criar e exibir o DataFrame com os resultados da simulação.
 
 2. Função Auxiliar
-A função auxiliar fará o calculo do valor subjetivo f(x) para um agente, se baseando na Teoria da Prospecção.
+ A função auxiliar fará o calculo do valor subjetivo f(x) para um agente, se baseando na Teoria da Prospecção.
  - Paramentros
     - x: A sensação objetiva de ganho (x > 0) ou perda (x < 0).
     - a: Controla a curvatura da função no domínio das perdas (sensibilidade à perda).
