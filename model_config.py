@@ -1,6 +1,6 @@
 # Arquivo: configuracao_modelo.py
 
-# --- Definições dos Perfis dos Agentes ---
+# Definições dos Perfis dos Agentes
 agent_profiles = {
     "comprador_hedge": {
         "type": "comprador", "a": 2.5, "b": 1.0, "E": -0.1, "lambda_tj": 1.5, "fator_impacto_fx": 0.3,
@@ -31,7 +31,7 @@ agent_profiles = {
     }
 }
 
-# --- Parâmetros Iniciais e da Simulação ---
+# Parâmetros Iniciais e da Simulação
 initial_tj_param = 0.05  # Taxa de juros inicial (ex: 5%)
 initial_p_benchmark_param = 100.0 # Preço de referência inicial do mercado
 gamma_tj_param = 50.0  # Parâmetro da fórmula da TJ (influencia a magnitude da TJ)
