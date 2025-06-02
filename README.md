@@ -9,7 +9,7 @@ Simulador TCC
 
 2. Função Auxiliar: A função auxiliar fará o calculo do valor subjetivo f(x) para um agente, se baseando na Teoria da Prospecção.
  - Paramentros
-    - x: A sensação objetiva de ganho (x > 0) ou perda (x < 0).
+    - x: A sensação subjetiva de ganho (x > 0) ou perda (x < 0).
     - a: Controla a curvatura da função no domínio das perdas (sensibilidade à perda).
     - b: Controla a curvatura da função no domínio dos ganhos.
     - E: Representa a expectativa do agente, modificando a intensidade da reação a ganhos/perdas.
