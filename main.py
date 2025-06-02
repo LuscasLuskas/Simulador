@@ -1,5 +1,5 @@
 # Arquivo: main.py
-import pandas as pd # Para usar .to_markdown() e .describe()
+import pandas as pd 
 
 # Importa componentes dos outros arquivos do projeto
 from model_config import (
@@ -25,7 +25,7 @@ from visualization import (
 def main():
     print("Iniciando a simulação de mercado...")
 
-    # --- Rodar a Simulação ---
+    # Simulação
     simulation_results_df = run_simulation_advanced_com_seguranca(
         agent_profiles,
         initial_tj_param,
@@ -41,13 +41,13 @@ def main():
 
     print("Simulação concluída. Gerando gráficos e resultados...")
 
-    # --- Geração de Gráficos ---
+    # Gráficos
     plot_taxa_juros(simulation_results_df, TJ_emergencia_param)
     plot_volume_transacoes(simulation_results_df, MA_limiar_baixo_param)
     plot_comportamento_compradores(simulation_results_df)
     plot_comportamento_vendedores(simulation_results_df)
 
-    # --- Impressão dos Resultados no Console ---
+    # --- Impressão dos Resultados
     print("\n--- Resultados da Simulação com Dispositivo de Segurança (Últimos 15 ciclos) ---")
     print(simulation_results_df[["ciclo", "tj", "ma", "seguranca_ativada", "transaction_prices_avg"]].tail(15).to_markdown(index=False))
 
